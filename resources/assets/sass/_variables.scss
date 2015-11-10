@@ -1,0 +1,98 @@
+/*
+|--------------------------------------------------------------------------
+| Colors
+|--------------------------------------------------------------------------
+*/
+$gray:                     #333333;
+$dark-primary-color:       #455A64;
+$default-primary-color:    #607D8B;
+$light-primary-color:      #CFD8DC;
+$dark-secondary-color:     #851124;
+$secondary-color:          #CD2D47;
+$light-secondary-color:    #FE4565;
+$accent-color:             #FF4081;
+$divider-color:            #B6B6B6;
+$warning-color:            #FFDF94;
+$dark-warning-color:       #E4C06E;
+
+/*
+|--------------------------------------------------------------------------
+| Background
+|--------------------------------------------------------------------------
+*/
+$body:                            #E3EBED;
+$box:                             #FFFFFF;
+$nav-user:                        #CD2D47;
+$navigation:                      #333333;
+$navigation-account:              #404040;
+$navigation-account-background:   #525252;
+$navigation-account-user:         #757575;
+$navigation-account-user-name:    #A3A3A3;
+$footer:                          #CD2D47;
+
+/*
+|--------------------------------------------------------------------------
+| Typography
+|--------------------------------------------------------------------------
+*/
+$font-family-primary:      'Muli', sans-serif;
+$font-family-secondary:    'Ovo', serif;
+$primary-text-color:       #212121;
+$secondary-text-color:     #727272;
+$link-color:               #FF4081;
+$link-color-light:         #FF94A7;
+$link-hover-color:         #721526;
+$link-hover-decoration:    underline;
+$button-hover:             #721526;
+$icon-button:              #FFFFFF;
+
+$font-size:           16px !default;
+$font-size-xlarge:    ceil(($font-size * 1.90)) !default; // ~30px
+$font-size-mlarge:    ceil(($font-size * 1.45)) !default; // ~23px
+$font-size-llarge:    ceil(($font-size * 1.25)) !default; // ~20px
+$font-size-slarge:    ceil(($font-size * 1.12)) !default; // ~18px
+$font-size-xsmall:    ceil(($font-size * 0.85)) !default; // ~14px
+$font-size-msmall:    ceil(($font-size * 0.65)) !default; // ~11px
+$font-size-ssmall:    ceil(($font-size * 0.55)) !default; // ~9px
+
+$font-size-h-1:       floor(($font-size * 2.50)) !default; // ~40px
+$font-size-h-2:       floor(($font-size * 2.15)) !default; // ~34px
+$font-size-h-3:       ceil(($font-size * 1.75)) !default;  // ~28px
+$font-size-h-4:       ceil(($font-size * 1.25)) !default;  // ~20px
+$font-size-h-5:       $font-size !default;                 // ~16px
+$font-size-h-6:       ceil(($font-size * 0.85)) !default;  // ~14px
+
+/*
+|--------------------------------------------------------------------------
+| Media Queries Breakpoints
+|--------------------------------------------------------------------------
+*/
+$screen-ss-min:    320px;
+$screen-xs-min:    480px;
+$screen-sm-min:    768px;
+$screen-md-min:    992px;
+$screen-mg-min:    1024px;
+$screen-lg-min:    1200px;
+$screen-gd-min:    1824px;
+
+$screen-ss-max:    ($screen-xs-min - 1);
+$screen-xs-max:    ($screen-sm-min - 1);
+$screen-sm-max:    ($screen-md-min - 1);
+$screen-md-max:    ($screen-mg-min - 1);
+$screen-mg-max:    ($screen-lg-min - 1);
+$screen-lg-max:    ($screen-gd-min - 1);
+
+/*
+|--------------------------------------------------------------------------
+| Modals
+|--------------------------------------------------------------------------
+*/
+
+// Modals pequeños
+$modals-lg:         370px !default;
+$modals-sm:         315px !default;
+
+// Modals medianos
+$modalm-lg:         750px !default;
+$modalm-md:         480px !default;
+$modalm-sm:         315px !default;

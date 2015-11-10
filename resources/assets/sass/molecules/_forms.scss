@@ -1,0 +1,45 @@
+/*
+|--------------------------------------------------------------------------
+| Input 
+|--------------------------------------------------------------------------
+*/
+	/*
+	|--------------------------------------------------------------------------
+	| Input Text --- inp
+	|--------------------------------------------------------------------------
+	*/
+	.inp-text {
+		border: solid 1px $inp-text-border_color;
+		color: $inp-text_color;
+		font-size: $font-size-msmall;
+		background: $inp-text_background;
+		padding: $inp_text-padding;
+	}
+	.input-text_primary {
+		border-radius:$inp_text-border_radius;
+		display: $inp_text-block;
+	}
+	.input-text_secundary { 
+		text-align: $inp_text-align;
+		display: $inp_text-inline_block;
+	}
+
+	/*
+	|--------------------------------------------------------------------------
+	| Form question --- inp
+	|--------------------------------------------------------------------------
+	*/
+	.question {
+		.inp-text {
+			border: solid 1px $inp-text-border_color;
+			color: $inp-text_color;
+			font-size: $font-size-msmall;
+			background: $inp-text_background;
+			padding: $inp_text-padding;
+			display: block;
+			border-radius: 5px;
+			text-align: left;
+			width: 100%;
+			margin-top: 20px;
+		}
+	}

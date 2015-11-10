@@ -1,0 +1,39 @@
+/*
+|--------------------------------------------------------------------------
+| Logo Navigation
+|--------------------------------------------------------------------------
+*/
+.nav_logo {
+	width: $nav-logo-size;
+	height: auto;
+}
+/*
+|--------------------------------------------------------------------------
+| Secciones de la plataforma
+|--------------------------------------------------------------------------
+*/
+.nav_section {
+	color: $nav-section_color;
+	font-size: $nav-section-size;
+	text-transform: $nav-section-transform;
+}
+/*
+|--------------------------------------------------------------------------
+| Search Navigation
+|--------------------------------------------------------------------------
+*/
+.nav_search {
+	width: 40%;
+	display: flex;
+	flex-flow: row-reverse wrap;
+	align-items: stretch;
+	@media screen and (max-width: $screen-md-min) { 
+		display: block;
+	}
+	.icon {
+				
+	}
+	p {
+		margin-left: 20px;
+	}
+}

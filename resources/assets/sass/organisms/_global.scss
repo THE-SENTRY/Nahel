@@ -1,0 +1,38 @@
+/*
+|--------------------------------------------------------------------------
+| Body
+|--------------------------------------------------------------------------
+*/
+body {
+	background: $bg_body!important;
+}
+/*
+|--------------------------------------------------------------------------
+| Navigation
+|--------------------------------------------------------------------------
+*/
+.navigation {
+	background: $bg_navigation;
+	border-bottom: solid 5px $nav-border_color;
+	margin-bottom: 0px;
+	.navigation-content {
+		display: flex;
+		flex-flow: row no-wrap;
+		justify-content: space-between;
+		align-items: center;
+		.nav-item {
+			display: flex;
+			align-items: center;
+		}
+	}
+}
+/*
+|--------------------------------------------------------------------------
+| Header
+|--------------------------------------------------------------------------
+*/
+.header {
+	height: 500px;
+	position: relative;
+	display: block;
+}

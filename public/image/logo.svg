@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 19.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 800.7 800.7" style="enable-background:new 0 0 800.7 800.7;" xml:space="preserve">
+<style type="text/css">
+	.st0{display:none;}
+	.st1{fill:#151515;}
+	.st2{fill:#2D2D2D;}
+	.st3{fill:#FFFFFF;}
+	.st4{fill:#F3F3F3;}
+	.st5{fill:#ED282F;}
+	.st6{fill:none;stroke:#151515;stroke-miterlimit:10;}
+	.st7{fill:#64CBEE;}
+	.st8{fill:#507CBD;}
+	.st9{fill:#F06360;}
+	.st10{filter:url(#Adobe_OpacityMaskFilter);}
+	.st11{fill:url(#SVGID_2_);}
+	.st12{fill:#DDDDDD;}
+	.st13{fill:#222222;}
+	.st14{fill:none;stroke:#ED3342;stroke-width:4.0211;stroke-miterlimit:10;}
+	.st15{clip-path:url(#SVGID_30_);fill:url(#SVGID_31_);}
+	.st16{fill:#2B323A;}
+	.st17{fill:#F37735;}
+	.st18{clip-path:url(#SVGID_33_);fill:url(#SVGID_34_);}
+	.st19{clip-path:url(#SVGID_36_);fill:url(#SVGID_37_);}
+	.st20{clip-path:url(#SVGID_39_);fill:url(#SVGID_40_);}
+	.st21{fill:#6B6B6B;}
+</style>
+<g id="Grid-guias" class="st0">
+</g>
+<g id="Fotter">
+</g>
+<g id="Body">
+</g>
+<g id="Capa_4">
+	<g>
+		<path class="st14" d="M728.9,400.3c0,181.4-147.1,328.5-328.5,328.5c-181.4,0-328.5-147.1-328.5-328.5
+			c0-181.4,147.1-328.5,328.5-328.5C581.8,71.8,728.9,218.9,728.9,400.3z"/>
+		<g>
+			<defs>
+				<polygon id="SVGID_32_" points="0,389.6 411.1,800.7 800.7,411.1 389.6,0 				"/>
+			</defs>
+			<clipPath id="SVGID_1_">
+				<use xlink:href="#SVGID_32_"  style="overflow:visible;"/>
+			</clipPath>
+			
+				<linearGradient id="SVGID_2_" gradientUnits="userSpaceOnUse" x1="-1552.7009" y1="2151.248" x2="-1548.0526" y2="2151.248" gradientTransform="matrix(172.2511 0 0 -172.2511 267454.4375 370955.1875)">
+				<stop  offset="0" style="stop-color:#D6D5D3"/>
+				<stop  offset="0.586" style="stop-color:#FFFFFF"/>
+				<stop  offset="1" style="stop-color:#D6D5D3"/>
+			</linearGradient>
+			<rect x="0" y="0" style="clip-path:url(#SVGID_1_);fill:url(#SVGID_2_);" width="800.7" height="800.7"/>
+		</g>
+		<polygon class="st16" points="781.7,410.6 410.6,781.7 18.9,390.1 390.1,18.9 		"/>
+		<polygon class="st5" points="173.1,227.8 419.5,227.8 476.4,370.9 519.3,227.8 673.9,227.8 561.6,572.9 412.9,572.9 341.4,342.6 
+			143.9,343.2 		"/>
+		<polygon class="st17" points="188.2,384 325.8,384 261.8,570.4 126.7,570.4 		"/>
+	</g>
+</g>
+</svg>

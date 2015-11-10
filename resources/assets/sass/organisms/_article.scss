@@ -1,0 +1,152 @@
+/*
+|--------------------------------------------------------------------------
+| Boxes
+|--------------------------------------------------------------------------
+*/
+	/*
+	|--------------------------------------------------------------------------
+	| Box Primary
+	|--------------------------------------------------------------------------
+	*/
+	.content-box_primary {
+
+	}
+	/*
+	|--------------------------------------------------------------------------
+	| Box Secundary
+	|--------------------------------------------------------------------------
+	*/
+	.content-box_secundary {
+	}
+/*
+|--------------------------------------------------------------------------
+| Banner
+|--------------------------------------------------------------------------
+*/
+.banner {
+	background: $bg_banner;	
+	.title-section {
+		padding: 15px;
+		text-align: center;
+		border-bottom: 1px solid white;
+	}
+	.content-banner {
+		.description {
+			padding: 15px;
+		}
+		.image {
+			height: $banner-image_size;
+			border: solid 30px $secundary-color;
+			border-left: solid 60px $secundary-color;
+			border-right: solid 60px $secundary-color;
+		}
+	}
+}
+/*
+|--------------------------------------------------------------------------
+| Comments
+|--------------------------------------------------------------------------
+*/
+.comments {
+	background: $bg_comments;
+	#content-tweets {
+		.tweets {
+			text-align: center;
+			.item {
+				padding: 70px;
+			}
+		}
+	}
+}
+/*
+|--------------------------------------------------------------------------
+| Footer
+|--------------------------------------------------------------------------
+*/
+.footer {
+	background: $bg_footer;
+}
+
+/*
+|--------------------------------------------------------------------------
+| Title section
+|--------------------------------------------------------------------------
+*/
+.box-title-section-primary{
+	padding: 20px;
+	background: $bg_title_section-primary;
+}
+.box-subtitle-section-primary {
+	padding: 10px;
+	background: $bg_title_section-primary;
+}
+.box-title-section-secundary {
+	padding: 10px;
+	margin-top: 15px;
+	background: $bg_title_section-secundary;
+	border-bottom: 5px solid $secundary-color;
+}
+/*
+|--------------------------------------------------------------------------
+| Background Video ---- bg-video
+|--------------------------------------------------------------------------
+*/
+.video {
+	position: relative;
+	display: block;
+	height: $bg-video-size;
+}
+/*
+|--------------------------------------------------------------------------
+| Contacto
+|--------------------------------------------------------------------------
+*/
+.contactanos {
+	.box_secundary-title {
+		font-size: $font-size;
+		text-transform: none;
+	}
+}
+/*
+|--------------------------------------------------------------------------
+| Sucursales
+|--------------------------------------------------------------------------
+*/
+.sucursales {
+	background: $secundary-color;
+	padding-top: 50px;
+	padding-bottom: 50px;
+	.content-sucursales {
+		.sucursal {
+			text-align: center;
+			margin-top: 40px;
+			p,h1,strong {
+				color: white;
+			}
+		}
+	}
+}
+/*
+|--------------------------------------------------------------------------
+| Descargas
+|--------------------------------------------------------------------------
+*/
+.download_archive {
+	.container-archive {
+		display: flex;
+		align-items: center;
+		@media screen and (max-width: $screen-xs-min) { 
+			display: block;
+		}
+
+	}
+}
+/*
+|--------------------------------------------------------------------------
+| Single
+|--------------------------------------------------------------------------
+*/
+.single {
+	padding-top: 20px;
+	padding-bottom: 20px;
+}

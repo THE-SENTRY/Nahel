@@ -1,0 +1,160 @@
+
+/*
+|--------------------------------------------------------------------------
+| Title Section
+|--------------------------------------------------------------------------
+*/
+.section-title-primary {
+	font-size: $stn-title-size;
+	color: $stn_title-primary-color;
+	text-transform: $stn-title-transform;
+	font-weight: lighter;	
+}
+.section-title-secundary {
+	font-size: $font-size-xlarge;
+	color: $stn_title-secundary-color;
+	text-transform: $stn-title-transform;
+	margin-left: 10px;
+}
+
+/*
+|--------------------------------------------------------------------------
+| Boxes
+|--------------------------------------------------------------------------
+*/
+	/*
+	|--------------------------------------------------------------------------
+	| Box Primary 
+	|--------------------------------------------------------------------------
+	*/
+	.box_primary-title {
+		font-weight: 300;
+		font-size: $font-size-llarge;
+		color: $secundary-color;
+	}
+	.box_primary-subtitle {
+		font-weight: lighter;
+		font-size: $font-size-msmall;
+		color: $secundary-text_color;
+	}
+	/*
+	|--------------------------------------------------------------------------
+	| Box Secundary
+	|--------------------------------------------------------------------------
+	*/
+	.box_secundary-title {
+		font-weight: 700;
+		font-size: $font-size-h1;
+		color: $primary-text_color;
+		border-color: $secundary-color;
+		text-transform: uppercase;
+	}
+	.box_secundary-subtitle {
+		font-weight: lighter;
+		font-size: $font-size;
+		color: $secundary-text_color;
+	}
+
+/*
+|--------------------------------------------------------------------------
+| Blockquote
+|--------------------------------------------------------------------------
+*/
+.blockquote {
+	font-size: $font-size;
+	border-left: solid $border-blockquote $blk-border_color;
+}
+/*
+|--------------------------------------------------------------------------
+| Time
+|--------------------------------------------------------------------------
+*/
+.time {
+	font-size: $time-font-size;
+	font-style: $time-font-style;
+	color: $tt-color;
+}
+/*
+|--------------------------------------------------------------------------
+| Banner
+|--------------------------------------------------------------------------
+*/
+.bnr-title-section {
+	font-size: $font-size-slarge;
+	font-weight: lighter;
+	color: $bnn-title_color;
+}
+.bnr-title {
+	font-size: $font-size-h2;
+	font-weight: 600;
+	color: $bnn-box-title_color;
+}
+.bnr-subtitle {
+	font-size: $font-size-xsmall;
+	font-weight: lighter;
+	color: $bnn-box-subtitle_color;
+}
+/*
+|--------------------------------------------------------------------------
+| Descargas
+|--------------------------------------------------------------------------
+*/
+.download-text {
+	color: white;
+	font-weight: lighter;
+	font-size: $font-size-mlarge;
+	font-family: $font-family-secundary;
+}
+.download_archive {
+	background: $bg_box;
+	margin-bottom: 15px;
+	border-bottom: solid 5px $secundary-color;
+	a {
+		margin: 0;
+	}
+}
+.dowload_archive-name {
+	font-size: $font-size-xsmall;
+	font-weight: lighter;
+	font-family: $font-family-secundary;
+}
+.published {
+	border-left: solid 1px  $gray;
+	border-right: solid 1px  $gray;
+	@media screen and (max-width: $screen-xs-min) { 
+		border: none;
+	}
+	.dowload_archive-published {
+		font-size: $font-size-msmall;
+		color: $gray;
+	}
+}
+/*
+|--------------------------------------------------------------------------
+| Single
+|--------------------------------------------------------------------------
+*/
+.single-title {
+	font-size: $font-size-llarge;
+	color: $secundary-color;
+	text-transform: uppercase;
+}
+.single-content {
+	font-size: $font-size;
+	color: $secundary-text_color;
+	font-weight: lighter;
+}
+.single-subtitle {
+	font-size: $font-size-slarge;
+	color: $primary-text_color;
+	font-weight: 700;
+}
+.single-quote {
+	margin-left: 10px;
+	em {
+		font-size: $font-size-llarge;
+		color: $secundary-color;
+		font-family: $font-family-secundary;
+		text-transform: uppercase;
+	}
+}

@@ -1,0 +1,33 @@
+/*
+|--------------------------------------------------------------------------
+| Buttons
+|--------------------------------------------------------------------------
+*/
+	/*
+	|--------------------------------------------------------------------------
+	| Primary
+	|--------------------------------------------------------------------------
+	*/
+	.btn_primary {
+		padding: $btn-primary_padding;			
+		margin: $btn-primary_margin;
+		display: $btn-primary_display;
+		margin: 40px 0px;			
+		color: $btn-primary_color;
+		background: $btn-primary_background;
+		border: $btn-primary_border_size solid $btn-primary_border_color;
+	}
+	/*
+	|--------------------------------------------------------------------------
+	| Secundary
+	|--------------------------------------------------------------------------
+	*/
+	.btn_secundary {
+		padding: $btn-secundary_padding;			
+		margin: $btn-secundary_margin;
+		display: $btn-secundary_display;
+		margin: 40px 0px;			
+		color: $btn-secundary_color;
+		background: $btn-secundary_background;
+		border: none;
+	}

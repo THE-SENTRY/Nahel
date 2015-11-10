@@ -1,0 +1,24 @@
+/*
+|--------------------------------------------------------------------------
+| Common Styles
+|--------------------------------------------------------------------------
+*/
+body {
+  color: $text-color;
+  font-family: $font-size;
+  background-color: $body-bg;
+}
+
+h1, h2, h3, h4, h5, h6 {
+ 	color: $secundary-text-color;
+	font-family: $font-family-secundary;
+
+}
+p {
+	color: $secundary-text-color;
+	font-family: $font-family-primary;
+}
+.btn {
+	border-radius: 5px;
+	background-color: red;
+}
