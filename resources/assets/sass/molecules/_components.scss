@@ -15,7 +15,19 @@
 		margin: 40px 0px;			
 		color: $btn-primary_color;
 		background: $btn-primary_background;
+		border-radius: 5px;
 		border: $btn-primary_border_size solid $btn-primary_border_color;
+		transition: all 0.1s ease-in-out;
+		&:hover {
+			background: rgba(255, 255, 255, 0.12);
+			box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.3);
+			text-decoration: none;
+			color: white;
+			transition: all 0.1s ease-in-out;
+		}
+		&:focus {
+			background: $secundary-color;
+		}
 	}
 	/*
 	|--------------------------------------------------------------------------
@@ -26,8 +38,17 @@
 		padding: $btn-secundary_padding;			
 		margin: $btn-secundary_margin;
 		display: $btn-secundary_display;
+		border-radius: 5px;
 		margin: 40px 0px;			
 		color: $btn-secundary_color;
 		background: $btn-secundary_background;
 		border: none;
+		transition: all 0.1s ease-in-out;
+		&:hover {
+			background: rgba(255, 255, 255, 0.12);
+			box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.3);
+			text-decoration: none;
+			color: $secundary_color;
+			transition: all 0.1s ease-in-out;
+		}
 	}

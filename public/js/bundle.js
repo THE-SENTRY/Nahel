@@ -3,11 +3,15 @@
 
 (function ($, window, undefined) {
 
-    'use strict';
+  'use strict';
 
-    $('html').removeClass('no-js');
+  $('html').removeClass('no-js');
 
-    // Place your code here...
+  $(document).ready(function () {
+    $('.carousel').carousel({
+      interval: 6000
+    });
+  });
 })(jQuery, window);
 
 },{}]},{},[1]);

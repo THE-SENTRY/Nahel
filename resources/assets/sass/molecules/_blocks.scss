@@ -12,6 +12,7 @@
 		position: absolute;
 		top: 0;
 		left: 0;
+		z-index: 2;
 		width: 250px;
 		border-bottom: 500px solid #000;
 		@media screen and (max-width: $screen-xs-min) { 
@@ -33,6 +34,7 @@
 		position: absolute;
 		bottom: 0;
 		right: 0;
+		z-index: 2;
 		width: 191px;
 		border-bottom: 300px solid #000;
 		border-left: 191px solid transparent;
@@ -47,11 +49,17 @@
 	*/
 	.header-description {
 		padding: 100px 15px;
+		z-index: 3;
 		.header-title {
-			color: $hdr-title_color;
+			color: white;
 			font-size: $hdr-title-size;
+			text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
+			@media screen and (max-width: $screen-xs-min) { 
+				color: white;
+			}
 		}
 		.header-subtitle {
+			text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
 			color: $hdr-subtitle_color;
 			font-size: $hdr-subtitle-size;
 		}
@@ -70,21 +78,54 @@
 	|--------------------------------------------------------------------------
 	*/
 	.box_primary {
+		text-decoration: none;
+		&:hover {
+			.box_primary-title {
+				color: $secundary-color;
+			}
+		}
 		.box_primary-content {
 			display: flex;
-			@media screen and (max-width: $screen-md-min) { 
+			@media screen and (max-width: $screen-sm-min) { 
 				display: block;
 			}
 			.image {
 				height: $box-1-image_size;
-				border-right: 10px solid rgb(221, 221, 221);
+				border-style: solid;
+				border-width: 0px 1px 2px;
+				border-color: #d8d8d8;
+				border-sizing: border-box;
+				border-right: 5px solid rgb(221, 221, 221);
 				@media screen and (max-width: $screen-md-min) { 
 					border: none;
+					border-top-left-radius: 2px;
+					border-top-right-radius: 2px;
+					border-style: solid;
+					border-width: 0px 1px 2px;
+					border-color: #d8d8d8;
+					border-sizing: border-box;
 				}
+				
 			}
 			.description {
 				background: $bg_box;
 				border-bottom: 3px solid $secundary-color;
+				border-radius: 3px;
+				border-style: solid;
+				border-width: 0px 1px 2px;
+				border-color: #d8d8d8;
+				border-sizing: border-box;
+				border-bottom: 3px solid $secundary-color;
+				h1 {
+					@media screen and (max-width: $screen-md-min) { 
+						padding-top: 5px;
+						margin-top: 5px;
+					}
+				}
+				@media screen and (max-width: $screen-md-min) {  
+					border-top-left-radius: 0px;
+					border-top-right-radius: 0px;
+				}
 			}
 		}
 	}
@@ -150,8 +191,17 @@
 			height: 500px;
 		}
 	}
-
-
+	/*
+	|--------------------------------------------------------------------------
+	| Box Lin
+	|--------------------------------------------------------------------------
+	*/
+	.box-link {
+		text-decoration: none;
+		&:hover {
+			text-decoration: none;
+		}
+	}
 /*
 |--------------------------------------------------------------------------
 | Background-video ----- bg-video

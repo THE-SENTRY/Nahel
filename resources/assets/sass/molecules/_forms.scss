@@ -14,9 +14,10 @@
 		font-size: $font-size-msmall;
 		background: $inp-text_background;
 		padding: $inp_text-padding;
+		outline-color: $secundary-color;
 	}
 	.input-text_primary {
-		border-radius:$inp_text-border_radius;
+		border-radius:$inp-border_radius;
 		display: $inp_text-block;
 	}
 	.input-text_secundary { 
@@ -41,5 +42,10 @@
 			text-align: left;
 			width: 100%;
 			margin-top: 20px;
+		}
+		.btn_secundary {
+			&:hover {
+				color: white!important;
+			}
 		}
 	}

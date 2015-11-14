@@ -17,6 +17,9 @@
 	font-size: $nav-section-size;
 	text-transform: $nav-section-transform;
 }
+.active {
+	color: $secundary-color;
+}
 /*
 |--------------------------------------------------------------------------
 | Search Navigation

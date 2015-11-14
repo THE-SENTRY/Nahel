@@ -5,7 +5,11 @@
     $('html').removeClass('no-js');
 
 
-    // Place your code here...
+   	$(document).ready(function() {
+    	$('.carousel').carousel({
+      		interval: 6000
+    	})
+  	});
 
 
 })(jQuery, window);
