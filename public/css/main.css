@@ -141,3 +141,29 @@ a .nav_section:hover{
     background-color: red;
     color: white;
 }
+
+video { display: block; }
+
+.col-md-6 .second-slider{
+padding: inherit;
+}
+
+
+.facts{
+padding: 40px;
+}
+
+.facts .panel-heading{
+color: white !important;
+background-color: #EA2C36 !important;
+text-transform: uppercase;
+padding: 20px;
+}
+
+.facts .panel-body{
+padding: 30px
+}
+
+.panel-group .panel{
+margin-top: 10px;
+}
