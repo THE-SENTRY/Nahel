@@ -94,8 +94,7 @@
 				transition: all 0.2s ease-in-out;
 			}
 			&:hover .image {
-				background-blend-mode: multiply;
-				background-color: $secundary-color;
+				background: -moz-radial-gradient(circle at 250px 100px, transparent 50px, #ed282f 150px);
 				transition: all 0.2s ease-in-out;
 			}
 			.image {
