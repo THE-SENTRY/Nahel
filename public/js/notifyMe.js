@@ -16,11 +16,11 @@
         var i = e(this).find("input[name=email]");
         var s = e(this).attr("action");
         var o = e(this).find(".note");
-        var u = e("<p class='message'></p>").appendTo(e(this));
+        var u = e("<p class='message notify-subscription'></p>").appendTo(e(this));
         var a = e("<i></i>");
-        var f = "fa fa-spinner fa-spin";
-        var l = "fa fa-check";
-        var c = "fa fa-exclamation";
+        var f = "noty fa fa-spinner fa-spin spinner";
+        var l = "noty fa fa-check check";
+        var c = "noty fa fa-exclamation exclamation";
         i.after(a);
         e(this).on("submit", function(t) {
             t.preventDefault();

@@ -367,3 +367,33 @@ video#bgvid {
 		}
 	}
 }
+
+.subscription {
+	.input-text_secundary {
+		width: 60%;
+	}
+	.btn {
+		font-size: 13px;
+	}
+}
+.notify-subscription {
+	color: white;
+	position: absolute;
+    top: 174px;
+    left: 35px;
+}
+.noty {
+	position: absolute;
+	left: 25px;
+	top: 176px;	
+}
+.spinner {
+	color: white;
+}
+.exclamation {
+	color: yellow;
+}
+.check {
+	color: rgba(0, 255, 137, 0.89);
+}
+
