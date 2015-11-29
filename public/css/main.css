@@ -150,7 +150,8 @@ padding: inherit;
 
 
 .facts{
-padding: 40px;
+   padding: 40px;
+   background: black;
 }
 
 .facts .panel-heading{
