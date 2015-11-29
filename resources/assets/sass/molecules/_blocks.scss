@@ -94,7 +94,6 @@
 				transition: all 0.2s ease-in-out;
 			}
 			&:hover .image {
-				background: -moz-radial-gradient(circle at 250px 100px, transparent 50px, #ed282f 150px);
 				transition: all 0.2s ease-in-out;
 			}
 			.image {
@@ -247,11 +246,6 @@
 	#video-image {
 		display: none;
 		transition: all 1s ease-in-out;
-	}
-	.layer-red {
-		background-blend-mode: multiply;
-    	background-color: $secundary-color;
-    	display: none;
 	}
 }
 video#bgvid { 
