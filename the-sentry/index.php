@@ -1,44 +1,45 @@
-<?php get_header(); ?>
+<?php get_header(); 
+global $wp_query;
+global $no_posts_home; ?>
 	<div id="content-header" class="carousel-fade carousel slide" data-ride="carousel">
 		<div class="carousel-inner row tweets" role="listbox">
+			<?php if (! empty($wp_query->posts) ) : ?>
 				<ol class="carousel-indicators comment_control">
-					<li data-target="#content-header" data-slide-to="0" class="comment_control-slide active"></li>
-					<li data-target="#content-header" data-slide-to="1" class="comment_control-slide"></li>
-					<li data-target="#content-header" data-slide-to="2" class="comment_control-slide"></li>
-					<li data-target="#content-header" data-slide-to="3" class="comment_control-slide"></li>
+					<?php foreach ($wp_query->posts as $key => $post): 
+						$active = $key == 0 ? 'active' : '';?>
+						<li data-target="#content-header" data-slide-to="<?php echo $key; ?>" class="comment_control-slide <?php echo $active; ?>"></li>
+					<?php endforeach; ?>
 				</ol>
-			<div class="item active container-fluid background-image header" role="listbox" style="background-image: url('http://imagenes.4ever.eu/data/download/deporte/ciclismo/bicicleta-de-montana,-bosque,-huellas-en-la-nieve-152861.jpg')">
-				<div class="container">
-					<div class="col-sm-4 header-description">
-						<h1 class="header-title">Lorem ipsum dolor</h1>
-						<p class="header-subtitle">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores velit.</p>
-						<a class="btn_secundary" href="">Ver</a>
+			<?php endif;
+			if (! empty($wp_query->posts) ) :
+				foreach ($wp_query->posts as $key => $post):
+					$no_posts_home[] = $post->ID;
+					$imagen_a = attachment_image_url($post->ID, 'full'); 
+					$active = $key == 0 ? 'active' : ''; ?>
+
+					<div class="item <?php echo $active; ?> container-fluid background-image header" role="listbox" style="background-image: url('<?php echo $imagen_a; ?>')">
+						<div class="container">
+							<div class="col-sm-4 header-description">
+								<h1 class="header-title"><?php echo $post->post_title; ?></h1>
+								<p class="header-subtitle">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores velit.</p>
+								<a class="btn_secundary" href="<?php echo get_the_permalink($post->ID); ?>">Ver</a>
+							</div>
+
+							<div class="col-sm-2 col-md-offset-5">
+								
+							</div>
+						</div>
 					</div>
 
-					<div class="col-sm-2 col-md-offset-5">
-						
-					</div>
-				</div>
-			</div>
-			<div class="item container-fluid background-image header" role="listbox" style="background-image: url('http://i.imgur.com/dEET8Uk.jpg')">
-				<div class="container">
-					<div class="col-sm-4 header-description">
-						<h1 class="header-title">Lorem ipsum dolor</h1>
-						<p class="header-subtitle">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores velit.</p>
-						<a class="btn_secundary" href="">Ver</a>
-					</div>
-
-					<div class="col-sm-2 col-md-offset-5">
-						
-					</div>
-				</div>
-			</div>
-			  <a class="left carousel-control" href="#content-header" role="button" data-slide="prev">
+				<?php endforeach;
+			endif; ?>
+			
+			 <!--  <a class="left carousel-control" href="#content-header" role="button" data-slide="prev">
 
 			  </a>
 			  <a class="right carousel-control" href="#content-header" role="button" data-slide="next">
 
-			  </a>		
+			  </a>		 -->
 		</div>
 	</div>
 	<div class="container content-box_primary">
@@ -50,60 +51,42 @@
 			</div>
 			<div class="col-md-12 boxes_primary">
 				<div class="row ">
-					<div class="col-md-6">
-						<div class="box box_primary">
-							<a class="box-link"href="">
-								<div class="row box_primary-content">
-									<div class="col-sm-6 image background-image" style="background: url('http://imagenes.4ever.eu/data/download/deporte/ciclismo/bicicleta-de-montana,-bosque,-huellas-en-la-nieve-152861.jpg')"></div>
-									<div class="col-sm-6 description">
-										<h1 class="box_primary-title">Lorem ipsum dolor</h1>
-										<p><kbd><i class="fa fa-clock-o"></i> 30/marzo/2015</kbd></p>
-										<p class="box_primary-subtitle">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias iste tempora cupiditate odit nostrum enim voluptas mollitia hic ut labore. </p>
-									</div>
-								</div>
-							</a>
-						</div>
-					</div>
-					<div class="col-md-6">
-						<div class="box box_primary">
-							<div class="row box_primary-content">
-								<div class="col-sm-6 image background-image" style="background: url('http://imagenes.4ever.eu/data/download/deporte/ciclismo/bicicleta-de-montana,-bosque,-huellas-en-la-nieve-152861.jpg')"></div>
-								<div class="col-sm-6 description">
-									<h1 class="box_primary-title">Lorem ipsum dolor</h1>
-									<p><kbd><i class="fa fa-clock-o"></i> 30/marzo/2015</kbd></p>
-									<p class="box_primary-subtitle">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias iste tempora cupiditate odit nostrum enim voluptas mollitia hic ut labore.</p>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-6">
-						<div class="box box_primary">
-							<div class="row box_primary-content">
-								<div class="col-sm-6 image background-image" style="background: url('http://imagenes.4ever.eu/data/download/deporte/ciclismo/bicicleta-de-montana,-bosque,-huellas-en-la-nieve-152861.jpg')"></div>
-								<div class="col-sm-6 description">
-									<h1 class="box_primary-title">Lorem ipsum dolor</h1>
-									<p><kbd><i class="fa fa-clock-o"></i> 30/marzo/2015</kbd></p>
-									<p class="box_primary-subtitle">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias iste tempora cupiditate odit nostrum enim voluptas mollitia hic ut labore. </p>
+					<?php $ultimas_notivias = new WP_Query( 
+						array(
+							'posts_per_page' => 4, 
+							'post_type' => 'post',
+							'post__not_in' => $no_posts_home
+						)
+					);
+
+					if ( $ultimas_notivias->have_posts() ) :
+						while ( $ultimas_notivias->have_posts() ) : $ultimas_notivias->the_post(); 
+							$imagen = attachment_image_url($post->ID, 'full');
+							$date = getDateTransform(date("Y-m-d", strtotime($post->post_date))); ?>
+
+							<div class="col-md-6">
+								<div class="box box_primary">
+									<a class="box-link" href="<?php echo the_permalink(); ?> ">
+										<div class="row box_primary-content">
+											<div class="col-sm-6 image background-image" style="background: url('<?php echo $imagen; ?>')"></div>
+											<div class="col-sm-6 description">
+												<h1 class="box_primary-title"><?php the_title(); ?></h1>
+												<p><kbd><i class="fa fa-clock-o"></i> <?php echo $date[0].'/'.$date[1].'/'.$date[2] ?></kbd></p>
+												<p class="box_primary-subtitle"><?php echo wp_trim_words( $post->post_content, 20 ); ?></p>
+											</div>
+										</div>
+									</a>
 								</div>
 							</div>
-						</div>
-					</div>
-					<div class="col-md-6">
-						<div class="box box_primary">
-							<div class="row box_primary-content">
-								<div class="col-sm-6 image background-image" style="background: url('http://imagenes.4ever.eu/data/download/deporte/ciclismo/bicicleta-de-montana,-bosque,-huellas-en-la-nieve-152861.jpg')"></div>
-								<div class="col-sm-6 description">
-									<h1 class="box_primary-title">Lorem ipsum dolor</h1>
-									<p><kbd><i class="fa fa-clock-o"></i> 30/marzo/2015</kbd></p>
-									<p class="box_primary-subtitle">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias iste tempora cupiditate odit nostrum enim voluptas mollitia hic ut labore. </p>
-								</div>
-							</div>
-						</div>
-					</div>
+
+						<?php endwhile; 
+					endif;
+					wp_reset_postdata(); ?>
+					
 				</div>
 			</div>
 			<div class="col-md-12 more_box">
-				<a class="btn_secundary" href="">Ver más</a>
+				<a class="btn_secundary" href="<?php echo site_url('/noticias/') ?>">Ver más</a>
 			</div>
 		</div>
 	</div>

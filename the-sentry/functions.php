@@ -53,25 +53,6 @@
 	});
 
 
-
-// FRONT PAGE DISPLAYS A STATIC PAGE /////////////////////////////////////////////////
-
-
-
-	/*add_action( 'after_setup_theme', function () {
-		
-		$frontPage = get_page_by_path('home', OBJECT);
-		$blogPage  = get_page_by_path('blog', OBJECT);
-		
-		if ( $frontPage AND $blogPage ){
-			update_option('show_on_front', 'page');
-			update_option('page_on_front', $frontPage->ID);
-			update_option('page_for_posts', $blogPage->ID);
-		}
-	});*/
-
-
-
 // REMOVE ADMIN BAR FOR NON ADMINS ///////////////////////////////////////////////////
 
 
@@ -87,7 +68,6 @@
 
 
 	add_filter( 'admin_footer_text', function() {
-		echo 'Creado por <a href="http://hacemoscodigo.com">Los Maquiladores</a>. ';
 		echo 'Powered by <a href="http://www.wordpress.org">WordPress</a>';
 	});
 
@@ -106,11 +86,11 @@
 		// add_image_size( 'size_name', 200, 200, true );
 		
 		// cambiar el tamaño del thumbnail
-		/*
-		update_option( 'thumbnail_size_h', 100 );
-		update_option( 'thumbnail_size_w', 200 );
-		update_option( 'thumbnail_crop', false );
-		*/
+		
+		update_option( 'medium_size_h', 446 );
+		update_option( 'medium_size_w', 711 );
+		update_option( 'medium_crop', false );
+		
 	}
 
 
@@ -138,27 +118,22 @@
 	add_action( 'pre_get_posts', function($query){
 
 		if ( $query->is_main_query() and ! is_admin() ) {
-
+			if( is_home() ){
+				$meta_query = array(
+								array(
+									'key'     => 'noticia-destacada',
+									'value'   => 'si',
+									'compare' => '='
+								)
+							);
+				$query->set( 'meta_query', $meta_query );
+				$query->set( 'meta_key', 'noticia-destacada' );
+				$query->set( 'posts_per_page', 4 );
+			}
 		}
 		return $query;
 
 	});
-
-
-
-// THE EXECRPT FORMAT AND LENGTH /////////////////////////////////////////////////////
-
-
-
-	/*add_filter('excerpt_length', function($length){
-		return 20;
-	});*/
-
-
-	/*add_filter('excerpt_more', function(){
-		return ' &raquo;';
-	});*/
-
 
 
 // REMOVE ACCENTS AND THE LETTER Ñ FROM FILE NAMES ///////////////////////////////////
@@ -222,43 +197,21 @@
 	function attachment_image_url($post_id, $size){
 		$image_id   = get_post_thumbnail_id($post_id);
 		$image_data = wp_get_attachment_image_src($image_id, $size, true);
-		echo isset($image_data[0]) ? $image_data[0] : '';
+		return isset($image_data[0]) ? $image_data[0] : '';
 	}
 
 
-
-	/*
-	 * Echoes active if the page showing is associated with the parameter
-	 * @param  string $compare, Array $compare
-	 * @param  Bool $echo use FALSE to use with php, default is TRUE to echo value
-	 * @return string
+	/**
+	 * GET DATE TRANSFORM
 	 */
-	function nav_is($compare = array(), $echo = TRUE){
+	function getDateTransform($fecha){
+		$dias = array('Lunes','Martes','Miercoles','Jueves','Viernes','Sábado','Domingo');
+		$dias_recortados = array('Lun','Mar','Mie','Jue','Vie','Sab','Dom');
 
-		$query = get_queried_object();
-		$inner_array = array();
-		if(gettype($compare) == 'string'){
-			
-			$inner_array[] = $compare;
-		}else{
-			$inner_array = $compare;
-		}
+		$dia_name = $dias[date('N', strtotime($fecha)) - 1];
+		$dia_recortado = $dias_recortados[date('N', strtotime($fecha)) - 1];
+		$fecha = explode('-', $fecha);
+		$mes = array('01' => 'Enero', '02' => 'Febrero', '03' => 'Marzo', '04' => 'Abril', '05' => 'Mayo', '06' =>'Junio', '07' => 'Julio', '08' => 'Agosto', '09' => 'Septiembre', '10' => 'Octubre', '11' => 'Noviembre', '12' => 'Diciembre');
 
-		foreach ($inner_array as $value) {
-			if( isset($query->slug) AND preg_match("/$value/i", $query->slug)
-				OR isset($query->name) AND preg_match("/$value/i", $query->name)
-				OR isset($query->rewrite) AND preg_match("/$value/i", $query->rewrite['slug'])
-				OR isset($query->post_name) AND preg_match("/$value/i", $query->post_name)
-				OR isset($query->post_title) AND preg_match("/$value/i", remove_accents(str_replace(' ', '-', $query->post_title) ) ) )
-			{
-				if($echo){
-					echo 'active';
-				}else{
-					return 'active';
-				}
-				return FALSE;
-			}
-
-		}
-		return FALSE;
+		return array($fecha[2], $mes[$fecha[1]], $fecha[0], $dia_name, $fecha[1], $dia_recortado);
 	}
