@@ -7,7 +7,7 @@
 	add_action('init', function(){
 
 
-		// NOTICIAS
+		// PROMOCIONES
 		$labels = array(
 			'name'          => 'Promociones',
 			'singular_name' => 'Promoción',
@@ -39,7 +39,40 @@
 		);
 		register_post_type( 'promocion', $args );
 
+		// SUCURSALES
+		$labels = array(
+			'name'          => 'Sucursales',
+			'singular_name' => 'Sucursal',
+			'add_new'       => 'Nueva Sucursal',
+			'add_new_item'  => 'Nueva Sucursal',
+			'edit_item'     => 'Editar Sucursal',
+			'new_item'      => 'Nueva Sucursal',
+			'all_items'     => 'Todas',
+			'view_item'     => 'Ver Sucursal',
+			'search_items'  => 'Buscar Sucursal',
+			'not_found'     => 'No se encontro',
+			'menu_name'     => 'Sucursales'
+		);
+
+		$args = array(
+			'labels'             => $labels,
+			'public'             => true,
+			'publicly_queryable' => true,
+			'show_ui'            => true,
+			'show_in_menu'       => true,
+			'query_var'          => true,
+			'rewrite'            => array( 'slug' => 'sucursales' ),
+			'capability_type'    => 'post',
+			'has_archive'        => true,
+			'hierarchical'       => false,
+			'menu_position'      => 6,
+			'supports'           => array( 'title', 'editor' )
+		);
+		register_post_type( 'sucursal', $args );
+
 	});
+
+
 
 	function change_post_menu_label() {
 	    global $menu, $submenu;

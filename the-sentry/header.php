@@ -28,10 +28,10 @@
 		        <div id="navbar" class="navbar-collapse collapse">
 		            <div class="row  navigation-content">
 		                <ul class="col-md-12 nav navbar-nav nav-item">
-		                	<li class="item"><a href="index.html"><img class="nav_logo" src="<?php echo THEMEPATH; ?>images/logo.svg" alt=""></a></li>
-		                    <li class="item"><a class="nav_section" href="index.html">inicio</a></li>
-		                    <li class="item"><a class="nav_section" href="nahel.html">quienes somos</a></li>
-		                    <li class="item"><a class="nav_section" href="noticias.html">noticias</a></li>
+		                	<li class="item"><a href="<?php echo site_url('/'); ?>"><img class="nav_logo" src="<?php echo THEMEPATH; ?>images/logo.svg" alt=""></a></li>
+		                    <li class="item"><a class="nav_section" href="<?php echo site_url('/'); ?>">inicio</a></li>
+		                    <li class="item"><a class="nav_section" href="<?php echo site_url('/quienes-somos/'); ?>">quienes somos</a></li>
+		                    <li class="item"><a class="nav_section" href="<?php echo site_url('/noticias/'); ?>">noticias</a></li>
 		                    <li class="item"><a class="nav_section" href="radikal.html">radikal</a></li>
 		                    <li class="item"><a class="nav_section" href="download.html">descargas</a></li>
 		                    <li class="item"><a class="nav_section" href="contact.html">contacto</a></li>

@@ -61,7 +61,7 @@ global $no_posts_home; ?>
 
 					if ( $ultimas_notivias->have_posts() ) :
 						while ( $ultimas_notivias->have_posts() ) : $ultimas_notivias->the_post(); 
-							$imagen = attachment_image_url($post->ID, 'full');
+							$imagen = attachment_image_url($post->ID, 'medium');
 							$date = getDateTransform(date("Y-m-d", strtotime($post->post_date))); ?>
 
 							<div class="col-md-6">
@@ -103,7 +103,7 @@ global $no_posts_home; ?>
 							<p class="bnr-subtitle">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus nam ad possimus doloribus quis sint repellendus, praesentium facilis culpa totam.</p>
 							<a class="btn_primary" href="">Ver</a>
 						</div>
-						<div class="col-md-7 image background-image" style="background: url('http://imagenes.4ever.eu/data/download/deporte/ciclismo/bicicleta-de-montana,-bosque,-huellas-en-la-nieve-152861.jpg')">
+						<div class="col-md-7 image background-image" style="background: url('http://the-sentry.dev/wp-content/uploads/2016/04/how-to-train-your-dragon-free-printables-004-668x446.png')">
 							
 						</div>
 					</div>
@@ -111,31 +111,5 @@ global $no_posts_home; ?>
 			</div>
 		</div>
 	</div>
-	<div class="container-fluid comments">
-		<div class="container">
-			<div id="content-tweets" class="carousel slide" data-ride="carousel">
-				    <!-- Indicators -->
-				<ol class="carousel-indicators comment_control">
-					<li data-target="#content-tweets" data-slide-to="0" class="comment_control-slide active"></li>
-					<li data-target="#content-tweets" data-slide-to="1" class="comment_control-slide"></li>
-				</ol>
-
-				<!-- Wrapper for slides -->
-				<div class="carousel-inner row tweets" role="listbox">
-					<div class="col-md-12 item comment active">
-						<i class="comment_icon  fa fa-twitter"></i>
-						<p class="coment_icon-text">@NAHEL</p>
-						<p class="comment_user_time"><kbd><i class="fa fa-twitter-square"></i> Usuario/hace <i class="fa fa-clock-o"></i> 4 minutos</kbd></p>
-						<p class="comment_publication">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer rutrum enim neque, sed interdum quam <br> consectetur id. Fusce non metus metus.</p>
-					</div>
-					<div class="col-md-12 item comment">
-						<i class="comment_icon  fa fa-twitter"></i>
-						<p class="coment_icon-text">@NAHEL</p>
-						<p class="comment_user_time"><kbd><i class="fa fa-twitter-square"></i> Usuario/hace <i class="fa fa-clock-o"></i> 4 minutos</kbd></p>
-						<p class="comment_publication">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer rutrum enim neque, sed interdum quam <br> consectetur id. Fusce non metus metus.</p>
-					</div>
-				</div>
-			</div>
-		</div>			
-	</div>
+	
 <?php get_footer(); ?>
