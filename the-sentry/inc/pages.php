@@ -57,7 +57,7 @@
 			$page = array(
 				'post_author' => 1,
 				'post_status' => 'publish',
-				'post_title'  => 'Radikal',
+				'post_title'  => 'Por que radikal',
 				'post_name'   => 'radikal',
 				'post_type'   => 'page'
 			);

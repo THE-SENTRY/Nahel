@@ -66,7 +66,7 @@
 			'has_archive'        => true,
 			'hierarchical'       => false,
 			'menu_position'      => 6,
-			'supports'           => array( 'title', 'editor' )
+			'supports'           => array( 'title' )
 		);
 		register_post_type( 'sucursal', $args );
 
