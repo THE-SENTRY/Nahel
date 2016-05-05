@@ -129,16 +129,44 @@
 | Sucursales
 |--------------------------------------------------------------------------
 */
+.title-sucursales {
+	background: white;
+	text-align: left;
+	padding-top: 10px;
+	.icon {
+		width: 60px;
+    	display: inline-block;
+    	border-left: 2px solid #ed282f;
+    	padding: 10px;	
+	}
+	.title {
+		display: inline-block;
+    	vertical-align: middle;
+    	color: #ed282f;
+    	font-weight: 300;
+	}
+}
 .sucursales {
-	background: $secundary-color;
-	padding-top: 50px;
-	padding-bottom: 50px;
+	background: white;
+	padding-top: 20px;
+	padding-bottom: 20px;
 	.content-sucursales {
 		.sucursal {
-			text-align: center;
-			margin-top: 40px;
-			p,h1,strong {
-				color: white;
+			margin-bottom: 40px;
+			.container-dates-sucursal {
+				border-right: solid 3px #ed282f;
+				h1 {
+					color: $bg_title_section-primary;
+					font-size: 20px;
+					font-weight: 200;
+				}
+				.direccion {
+					font-size: 11px;
+    				font-weight: 500;
+				}
+				p {
+					color: #635E5E;
+				}
 			}
 		}
 	}
