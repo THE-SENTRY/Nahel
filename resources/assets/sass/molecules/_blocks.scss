@@ -123,6 +123,21 @@
 				border-color: #d8d8d8;
 				border-sizing: border-box;
 				border-bottom: 3px solid $secundary-color;
+				.tags {
+					position: absolute;
+					top: 0px;
+					right: 0px;
+					padding: 2px 4px;
+					background: $secundary-color;
+					p {
+						font-size: 10px;
+						color: white;
+						margin: 0px;
+						text-transform: uppercase;
+						letter-spacing: 1px;
+						font-weight: 200;
+					}
+				}
 				h1 {
 					@media screen and (max-width: $screen-md-min) { 
 						padding-top: 5px;
