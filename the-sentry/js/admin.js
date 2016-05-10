@@ -69,6 +69,42 @@
 		});
 
 
+		var file_descarga;
+		$('#agregar-archivo-descarga').on('click', function(event) {
+			event.preventDefault();
+	        if (file_descarga) {
+	            file_descarga.open();
+	            return;
+	        }
+
+	        // Create the media frame.
+	        file_descarga = wp.media.frames.file_descarga = wp.media({
+	            title: jQuery(this).data('uploader_title'),
+	            button: {
+	                text: jQuery(this).data('uploader_button_text'),
+	            },
+	            multiple: false 
+	        });
+
+	        file_descarga.on('select', function(){
+
+	            var attachment = file_descarga.state().get('selection').first().toJSON();
+
+	            $('.descarga-url').val(attachment.url);
+	            $('.descarga-name').val(attachment.filename);
+	            $('.descarga-icon').val(attachment.icon);
+	            $('.descarga-subtype').val(attachment.subtype);
+
+	            $('.icon-descarga').attr('src', attachment.icon);
+	            $('.url-descarga').attr('href', attachment.url).text(attachment.filename);
+
+	        });
+
+	        // Finally, open the modal
+	        file_descarga.open();
+		});
+
+
 	});
 
 })(jQuery);

@@ -33,7 +33,7 @@
 		                    <li class="item"><a class="nav_section" href="<?php echo site_url('/quienes-somos/'); ?>">quienes somos</a></li>
 		                    <li class="item"><a class="nav_section" href="<?php echo site_url('/noticias/'); ?>">noticias</a></li>
 		                    <li class="item"><a class="nav_section" href="<?php echo site_url('/radikal/'); ?>">radikal</a></li>
-		                    <li class="item"><a class="nav_section" href="download.html">descargas</a></li>
+		                    <li class="item"><a class="nav_section" href="<?php echo site_url('/descargas/'); ?>">descargas</a></li>
 		                    <li class="item"><a class="nav_section" href="<?php echo site_url('/contacto/'); ?>">contacto</a></li>
 		                </ul><!-- .nav -->
 		                <div class="nav-item nav_search">

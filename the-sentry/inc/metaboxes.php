@@ -9,6 +9,8 @@
 		global $post;
 		add_meta_box( 'meta-box-extras_noticia', 'Extras Noticia', 'show_metabox_extras_noticia', 'post', 'side', 'high');
 		add_meta_box( 'meta-box-extras_sucursal', 'Extras', 'show_metabox_extras_sucursal', 'sucursal');
+		add_meta_box( 'meta-box-archivo_descarga', 'Archivo descarga', 'show_metabox_archivo_descarga', 'descarga', 'side', 'high');
+
 
 
 		if ($post->post_name == 'radikal'):
@@ -117,6 +119,33 @@
 	}
 
 
+	function show_metabox_archivo_descarga($post){
+		wp_nonce_field(__FILE__, 'archivo_descarga_nonce');
+		$archivo_descarga = get_post_meta( $post->ID, 'archivo_descarga', true );
+		$icon = isset($archivo_descarga['icon']) ? $archivo_descarga['icon'] : '';
+		$name = isset($archivo_descarga['name']) ? $archivo_descarga['name'] : '';
+		$url = isset($archivo_descarga['url']) ? $archivo_descarga['url'] : '';
+		$subtype = isset($archivo_descarga['subtype']) ? $archivo_descarga['subtype'] : '';
+		
+		$html = '';
+		$html .= '<img class="icon-descarga" src="'.$icon.'" >';
+		$html .= '<h3><a href="'.$url.'" target="_blank" class="url-descarga">'.$name.'</a></h3>';
+
+		if ($archivo_descarga != ''):
+			$html .= '<a href="#" id="agregar-archivo-descarga">Cambiar descarga</a>';
+		else:
+			$html .= '<a href="#" id="agregar-archivo-descarga">Agregar descarga</a>';
+		endif;
+
+		$html .= '<input type="hidden" name="archivo_descarga[url]" class="widefat descarga-url" value="'.$url.'">';
+		$html .= '<input type="hidden" name="archivo_descarga[name]" class="widefat descarga-name" value="'.$name.'">';
+		$html .= '<input type="hidden" name="archivo_descarga[icon]" class="widefat descarga-icon" value="'.$icon.'">';
+		$html .= '<input type="hidden" name="archivo_descarga[subtype]" class="widefat descarga-subtype" value="'.$subtype.'">';
+
+		echo $html;
+	}
+
+
 // SAVE METABOXES DATA ///////////////////////////////////////////////////////////////
 
 
@@ -143,6 +172,16 @@
 		if (isset($_POST['imagen_pregunta']) AND check_admin_referer(__FILE__, 'imagen_pregunta_nonce')) {
 			update_post_meta( $post_id, 'imagen_pregunta', $_POST['imagen_pregunta'] );
 		}
+
+		if (isset($_POST['archivo_descarga']) AND check_admin_referer(__FILE__, 'archivo_descarga_nonce')) {
+			file_put_contents(
+				'/Users/alejandrosandoval/Desktop/php.txt',
+				var_export($_POST['archivo_descarga'], true )
+			);
+			update_post_meta( $post_id, 'archivo_descarga', $_POST['archivo_descarga'] );
+		}
+
+		
 
 		if (isset($_POST['texto_contacto']) AND check_admin_referer(__FILE__, 'extras_contacto_nonce')) {
 			update_post_meta( $post_id, 'texto_contacto', $_POST['texto_contacto'] );

@@ -70,6 +70,36 @@
 		);
 		register_post_type( 'sucursal', $args );
 
+		$labels = array(
+			'name'          => 'Descargas',
+			'singular_name' => 'Descarga',
+			'add_new'       => 'Nueva Descarga',
+			'add_new_item'  => 'Nueva Descarga',
+			'edit_item'     => 'Editar Descarga',
+			'new_item'      => 'Nueva Descarga',
+			'all_items'     => 'Todas',
+			'view_item'     => 'Ver Descarga',
+			'search_items'  => 'Buscar Descarga',
+			'not_found'     => 'No se encontro',
+			'menu_name'     => 'Descargas'
+		);
+
+		$args = array(
+			'labels'             => $labels,
+			'public'             => true,
+			'publicly_queryable' => true,
+			'show_ui'            => true,
+			'show_in_menu'       => true,
+			'query_var'          => true,
+			'rewrite'            => array( 'slug' => 'descargas' ),
+			'capability_type'    => 'post',
+			'has_archive'        => true,
+			'hierarchical'       => false,
+			'menu_position'      => 6,
+			'supports'           => array( 'title', 'thumbnail' )
+		);
+		register_post_type( 'descarga', $args );
+
 	});
 
 

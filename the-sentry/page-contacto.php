@@ -107,23 +107,19 @@ $imagen = attachment_image_url($post->ID, 'medium'); ?>
 					'post_type' => 'sucursal'
 				)
 			);
-			$i = 0;
-			$total = $sucursales->found_posts - 1;
-			if ( $sucursales->have_posts() ) :
-				while ( $sucursales->have_posts() ) : $sucursales->the_post(); 
-					$imagen = attachment_image_url($post->ID, 'medium'); 
-					if($i%4 == 0):
-					    echo $i > 0 ? "</div>" : "";
-					    echo "<div class='row'>";
-					elseif($total == $i):
-						echo "</div>";
-					endif; ?>
-					<div class="sucursal col-md-3">
-						<h1>Lorem ipsum</h1>
-						<p>Llama al:</p>
-						<strong>Potasio Nº 119 Cd.Industrial C.P.34208.Durango,Dgo.</strong>
-					</div>
-				<?php $i++; endwhile; 
+			$posts_sucursal = ! empty($sucursales->posts) ? array_chunk($sucursales->posts, 4) : '';
+			if ( ! empty($posts_sucursal) ) :
+				foreach ($posts_sucursal as $key => $posts):
+					echo "<div class='row'>";
+					foreach ($posts as $key => $post): ?>
+						<div class="sucursal col-md-3">
+							<h1>Lorem ipsum</h1>
+							<p>Llama al:</p>
+							<strong>Potasio Nº 119 Cd.Industrial C.P.34208.Durango,Dgo.</strong>
+						</div>
+					<?php endforeach;
+					echo "</div>";
+				endforeach; 
 			endif;
 			wp_reset_postdata(); ?>
 			

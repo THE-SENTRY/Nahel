@@ -130,6 +130,10 @@
 				$query->set( 'meta_key', 'noticia-destacada' );
 				$query->set( 'posts_per_page', 4 );
 			}
+
+			if( is_post_type_archive('descarga') ){
+				$query->set( 'posts_per_page', -1 );
+			}
 		}
 		return $query;
 
@@ -205,6 +209,7 @@
 	 * GET DATE TRANSFORM
 	 */
 	function getDateTransform($fecha){
+		$fecha = date("Y-m-d", strtotime($fecha));
 		$dias = array('Lunes','Martes','Miercoles','Jueves','Viernes','Sábado','Domingo');
 		$dias_recortados = array('Lun','Mar','Mie','Jue','Vie','Sab','Dom');
 
@@ -248,6 +253,32 @@
 	    $pagenavi_options['larger_page_numbers_multiple'] = 5;
 
 	    return $pagenavi_options;
+	}
+
+	/**
+	 * ORDENA LAS DESCARGAS POR FECHA DE ACTUALIZACIÖN
+	 * @param  [object] $downloads [objeto con todas las descargas]
+	 * @return [array]  $new_arr   [arreglo con las descargas ordenadas]
+	 */
+	function getDownloadsOrderDate($downloads){
+		$new_arr = array();
+		foreach ($downloads as $key => $download) {
+			$date = getDateTransform($download->post_date);
+			$mes_ano = $date[1].$date[2];
+
+			$archivo_descarga = get_post_meta( $download->ID, 'archivo_descarga', true );
+
+			$index = $key + 1;
+			$new_arr[$mes_ano][$key]['icon']    = isset($archivo_descarga['icon']) ? $archivo_descarga['icon'] : '';
+			$new_arr[$mes_ano][$key]['name']    = isset($archivo_descarga['name']) ? $archivo_descarga['name'] : '';
+			$new_arr[$mes_ano][$key]['url']     = isset($archivo_descarga['url']) ? $archivo_descarga['url'] : '';
+			$new_arr[$mes_ano][$key]['subtype'] = isset($archivo_descarga['subtype']) ? $archivo_descarga['subtype'] : '';
+			$new_arr[$mes_ano][$key]['date']    = $download->post_date;
+			$new_arr[$mes_ano][$key]['mes']     = $date[1];
+			$new_arr[$mes_ano][$key]['ano']     = $date[2];
+		}
+		
+		return $new_arr;
 	}
 
 
