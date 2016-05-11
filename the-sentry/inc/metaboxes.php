@@ -8,7 +8,9 @@
 	add_action('add_meta_boxes', function(){
 		global $post;
 		add_meta_box( 'meta-box-extras_noticia', 'Extras Noticia', 'show_metabox_extras_noticia', 'post', 'side', 'high');
-		add_meta_box( 'meta-box-extras_sucursal', 'Extras', 'show_metabox_extras_sucursal', 'sucursal');
+		add_meta_box( 'meta-box-extras_sucursal', 'Extras', 'show_metabox_extras_sucursal', 'plaza');
+		add_meta_box( 'meta-box-extras_sucursal', 'Extras', 'show_metabox_extras_sucursal', 'concesionaria');
+		add_meta_box( 'meta-box-extras_sucursal', 'Extras', 'show_metabox_extras_sucursal', 'tienda');
 		add_meta_box( 'meta-box-archivo_descarga', 'Archivo descarga', 'show_metabox_archivo_descarga', 'descarga', 'side', 'high');
 
 

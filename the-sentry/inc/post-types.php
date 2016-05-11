@@ -41,17 +41,17 @@
 
 		// SUCURSALES
 		$labels = array(
-			'name'          => 'Sucursales',
-			'singular_name' => 'Sucursal',
-			'add_new'       => 'Nueva Sucursal',
-			'add_new_item'  => 'Nueva Sucursal',
-			'edit_item'     => 'Editar Sucursal',
-			'new_item'      => 'Nueva Sucursal',
+			'name'          => 'Plazas',
+			'singular_name' => 'Plaza',
+			'add_new'       => 'Nueva Plaza',
+			'add_new_item'  => 'Nueva Plaza',
+			'edit_item'     => 'Editar Plaza',
+			'new_item'      => 'Nueva Plaza',
 			'all_items'     => 'Todas',
-			'view_item'     => 'Ver Sucursal',
-			'search_items'  => 'Buscar Sucursal',
+			'view_item'     => 'Ver Plaza',
+			'search_items'  => 'Buscar Plaza',
 			'not_found'     => 'No se encontro',
-			'menu_name'     => 'Sucursales'
+			'menu_name'     => 'Plazas'
 		);
 
 		$args = array(
@@ -61,14 +61,78 @@
 			'show_ui'            => true,
 			'show_in_menu'       => true,
 			'query_var'          => true,
-			'rewrite'            => array( 'slug' => 'sucursales' ),
+			'rewrite'            => array( 'slug' => 'plazas' ),
 			'capability_type'    => 'post',
 			'has_archive'        => true,
 			'hierarchical'       => false,
 			'menu_position'      => 6,
 			'supports'           => array( 'title' )
 		);
-		register_post_type( 'sucursal', $args );
+		register_post_type( 'plaza', $args );
+
+		// Concesionarias
+		$labels = array(
+			'name'          => 'Concesionarias',
+			'singular_name' => 'Concesionaria',
+			'add_new'       => 'Nueva Concesionaria',
+			'add_new_item'  => 'Nueva Concesionaria',
+			'edit_item'     => 'Editar Concesionaria',
+			'new_item'      => 'Nueva Concesionaria',
+			'all_items'     => 'Todas',
+			'view_item'     => 'Ver Concesionaria',
+			'search_items'  => 'Buscar Concesionaria',
+			'not_found'     => 'No se encontro',
+			'menu_name'     => 'Concesionarias'
+		);
+
+		$args = array(
+			'labels'             => $labels,
+			'public'             => true,
+			'publicly_queryable' => true,
+			'show_ui'            => true,
+			'show_in_menu'       => true,
+			'query_var'          => true,
+			'rewrite'            => array( 'slug' => 'concesionarias' ),
+			'capability_type'    => 'post',
+			'has_archive'        => true,
+			'hierarchical'       => false,
+			'menu_position'      => 6,
+			'supports'           => array( 'title' )
+		);
+		register_post_type( 'concesionaria', $args );
+
+		// Tiendas
+		$labels = array(
+			'name'          => 'Tiendas',
+			'singular_name' => 'Tienda',
+			'add_new'       => 'Nueva Tienda',
+			'add_new_item'  => 'Nueva Tienda',
+			'edit_item'     => 'Editar Tienda',
+			'new_item'      => 'Nueva Tienda',
+			'all_items'     => 'Todas',
+			'view_item'     => 'Ver Tienda',
+			'search_items'  => 'Buscar Tienda',
+			'not_found'     => 'No se encontro',
+			'menu_name'     => 'Tiendas'
+		);
+
+		$args = array(
+			'labels'             => $labels,
+			'public'             => true,
+			'publicly_queryable' => true,
+			'show_ui'            => true,
+			'show_in_menu'       => true,
+			'query_var'          => true,
+			'rewrite'            => array( 'slug' => 'tiendas' ),
+			'capability_type'    => 'post',
+			'has_archive'        => true,
+			'hierarchical'       => false,
+			'menu_position'      => 6,
+			'supports'           => array( 'title' )
+		);
+		register_post_type( 'tienda', $args );
+
+		// ---
 
 		$labels = array(
 			'name'          => 'Descargas',
