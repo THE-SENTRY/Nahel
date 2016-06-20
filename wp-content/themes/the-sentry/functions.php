@@ -1,4 +1,4 @@
-<?php
+<?php 
 
 
 // DEFINIR LOS PATHS A LOS DIRECTORIOS DE JAVASCRIPT Y CSS ///////////////////////////
@@ -276,9 +276,33 @@
 			$new_arr[$mes_ano][$key]['date']    = $download->post_date;
 			$new_arr[$mes_ano][$key]['mes']     = $date[1];
 			$new_arr[$mes_ano][$key]['ano']     = $date[2];
+			$new_arr[$mes_ano][$key]['id']      = $download->ID;
+
 		}
 		
 		return $new_arr;
+	}
+
+
+	function downloadAttachment($data){ 
+ 
+		$download_id = isset($data['id']) ? $data['id'] : 0;
+
+		$archivo_descarga = get_post_meta( $download_id, 'archivo_descarga', true );
+		
+		$file_url = isset($archivo_descarga['url']) ? $archivo_descarga['url'] : '';
+		$array_url = explode("wp-content", $file_url);
+		$file = WP_CONTENT_DIR.$array_url[1];
+		if (file_exists($file) ) {
+		    header('Content-Type: application/octet-stream');
+		    header('Content-Disposition: attachment; filename="'.basename($file).'"');
+		    header('Expires: 0');
+		    header('Cache-Control: must-revalidate');
+		    header('Pragma: no-cache');
+		    header('Content-Length: ' . filesize($file));
+		    readfile($file);
+		    exit;
+		}
 	}
 
 

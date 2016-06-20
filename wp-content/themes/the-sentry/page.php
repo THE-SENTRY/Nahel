@@ -1,0 +1,1 @@
+<?php if( ! empty($_GET) AND isset($_GET['descargar']) ) downloadAttachment($_GET);

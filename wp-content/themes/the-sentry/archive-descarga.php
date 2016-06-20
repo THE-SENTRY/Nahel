@@ -43,7 +43,7 @@ $descargas = ! empty($wp_query->posts) ? getDownloadsOrderDate($wp_query->posts)
 										<p class="dowload_archive-published">Creado el <?php echo date("Y-m-d", strtotime($descarga['date'])); ?></p>
 									</div>
 									<div class="col-md-4">
-										<a class="btn_secundary" href="<?php echo $descarga['url']; ?>" target="_blank">Descargar <i class="fa fa-cloud-download"></i></a>
+										<a class="btn_secundary" href="<?php echo site_url('/descargar-archivo/').'?descargar=si&id='.$descarga['id']; ?>" target="_blank">Descargar <i class="fa fa-cloud-download"></i></a>
 									</div>
 								</div>					
 							</div>
