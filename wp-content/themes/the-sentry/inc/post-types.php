@@ -164,6 +164,38 @@
 		);
 		register_post_type( 'descarga', $args );
 
+		// ---
+
+		$labels = array(
+			'name'          => 'Preguntas',
+			'singular_name' => 'Pregunta',
+			'add_new'       => 'Nueva Pregunta',
+			'add_new_item'  => 'Nueva Pregunta',
+			'edit_item'     => 'Editar Pregunta',
+			'new_item'      => 'Nueva Pregunta',
+			'all_items'     => 'Todas',
+			'view_item'     => 'Ver Pregunta',
+			'search_items'  => 'Buscar Pregunta',
+			'not_found'     => 'No se encontro',
+			'menu_name'     => 'Preguntas'
+		);
+
+		$args = array(
+			'labels'             => $labels,
+			'public'             => true,
+			'publicly_queryable' => true,
+			'show_ui'            => true,
+			'show_in_menu'       => true,
+			'query_var'          => true,
+			'rewrite'            => array( 'slug' => 'preguntas' ),
+			'capability_type'    => 'post',
+			'has_archive'        => true,
+			'hierarchical'       => false,
+			'menu_position'      => 6,
+			'supports'           => array( 'title', 'editor' )
+		);
+		register_post_type( 'pregunta', $args );
+
 	});
 
 
